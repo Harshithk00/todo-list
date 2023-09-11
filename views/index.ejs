@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <title>TO-DO-LIST</title>
+</head>
+<body >
+<div id="background">
+
+<div id="alll">
+    <div >
+        <h2 class="todayDate"><%= day %></h2>
+    </div>    
+    <div id="inputcss">
+        <form action="/" method="post">
+        <input type="text" id="todolistid" name="ToDo" autocomplete="off">
+        <button id = "todoaddbutton" >+</button>
+        </form>
+    </div>
+    <div class="listclass">
+        <% if (authorized){ %>
+        <% Todolistall.forEach((element)=>{  %>
+            <div class="listtodo"> 
+                <div id="ch">
+                <input type="checkbox" class="checkboxid" >
+                </div>
+                <h3 id = "elementOfList" class="text-color" > <%= element %></h3>
+                
+            </div>
+            <hr >
+                <% }); %>
+                
+             <% } else{}%>
+            
+        
+</div>
+<div class="deletelist">
+    <form action="/sub" method="post">
+        <button type="submit" id="del-but" >Delete All</button>
+    </form>
+</div>
+        
+    
+</div>
+</div>
+</body>
+</html>
